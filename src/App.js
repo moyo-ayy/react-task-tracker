@@ -40,10 +40,15 @@ function App() {
     setTask([...tasks,tas])
   }
 
+  const clearTasks = (e) =>{
+    e.preventDefault()
+    setTask([])
+  }
+
   return (
     <div className="container">
       <Header title={('Task Manager')}/>
-      <AddTask submitform={submitform}/>
+      <AddTask submitform={submitform} clearTasks={clearTasks}/>
       <Tasks bolderfy={bolderfy} tasks={tasks} deleteItem={deleteItem}/>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const AddTask = ({submitform}) => {
+const AddTask = ({submitform,clearTasks}) => {
 
     const [text,setText] = useState('')
     const [date,setDate] = useState('')
@@ -21,6 +21,7 @@ const AddTask = ({submitform}) => {
             <input type='checkbox' placeholder="Add Task" onChange={(e) => setReminder(e.currentTarget.checked)}/>
         </div>
         <input type='submit' value='Save Task' className="btn btn-block"  onClick={(e) => submitform(e,text,date,reminder)}/>
+        <input value='Clear Tasks' type='submit' className="btn btn-block"  onClick={(e) => clearTasks(e)} />
     </form>
   )
 }
